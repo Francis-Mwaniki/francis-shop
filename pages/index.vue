@@ -12,7 +12,7 @@
     <div
       class="flex justify-start pt-3 items-center mx-auto bg-slate-800 flex-col gap-y-3 text-white min-h-screen"
     >
-      <div class="bg-gray-500">
+      <div class="bg-teal-100">
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 class="font-bold tracking-tight text-gray-900 text-2xl">
             Buy Nice <span class="text-indigo-600 text-2xl">Products today</span>
