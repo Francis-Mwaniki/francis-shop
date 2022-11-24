@@ -294,7 +294,7 @@ export default {
     },
     paymentMethod: function () {
       const script = document.createElement("script");
-      script.src = `https://www.paypal.com/sdk/js?client-id=AWjHak7Q7WHs4nR2XKwEUlybL_7Gte0ARuCwPNJ86iIVCqocEdBsNp1lHkgyPSKVq0yznDT3ji_ZJ6vP`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=AUUC25h3H97O3ZtajYj03O5bCI-6jMarsEn7WbSECupHM3rVNnNqg1f5f7xfett2mBV_achYoYcubreU`;
       script.addEventListener("load", this.setLoaded);
       document.body.appendChild(script);
     },
