@@ -1,3 +1,4 @@
 env
+.nuxt
 nuxt
 node_modules
