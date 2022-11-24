@@ -171,7 +171,7 @@
 
       <button
         @click="paymentMethod"
-        class="bg-slate-900 rounded px-9 py-2 ring-2 ring-indigo-600 text-white"
+        class="bg-slate-900 mb-6 rounded px-9 py-2 ring-2 ring-indigo-600 text-white"
       >
         Pay Here
       </button>
