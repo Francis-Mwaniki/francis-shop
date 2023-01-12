@@ -1,17 +1,11 @@
 <template>
   <main class="">
+    <div class="">
+      <Slider :getCount="getCount" />
+    </div>
     <div
-      class="absolute top-5 gap-x-2 right-32 md:right-8 md:top-5 flex-row justify-center items-center md:flex hidden"
+      class="absolute top-5 gap-x-2 right-3 md:right-8 md:top-5 flex-row justify-center items-center flex"
     >
-      <Nuxt-Link
-        to="/tasks"
-        class="btn btn-accent flex justify-center items-center mx-auto gap-x-1"
-      >
-        <span class="text-indigo-900 mx-1 cursor-pointer text-lg md:text-black">
-          <Icon name="ic:baseline-admin-panel-settings" class="text-black"
-        /></span>
-        Admin
-      </Nuxt-Link>
       <label for="my-modal-3" class="btn btn-accent btn-outline">
         <span class="text-indigo-900 mx-1 cursor-pointer text-lg md:text-black">
           <Icon name="ic:outline-shopping-cart" class="text-black"
@@ -48,16 +42,15 @@
     </label>
 
     <div
-      class="flex justify-start pt-3 items-center mx-auto bg-slate-900 flex-col gap-y-3 text-white min-h-screen"
+      class="flex justify-start sm:pb-3 items-center mx-auto bg-slate-900 flex-col gap-y-2 text-white"
     >
       <div class="bg-slate-900">
-        <div class="mx-auto max-w-2xl py-4 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 class="font-bold tracking-tight text-gray-100 text-2xl">
-            Buy Nice <span class="text-indigo-300 text-2xl">Products today</span>
+        <div class="mx-auto max-w-2xl pt-7 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
+          <h2 class="font-bold tracking-tight text-gray-100 text-2xl md:text-4xl py-2">
+            Buy Nice
+            <span class="text-indigo-300 text-2xl md:text-4xl">Products today</span>
           </h2>
-          <div class="">
-            <Slider :getCount="getCount" />
-          </div>
+
           <h3
             class="flex justify-around flex-row mx-auto items-center text-black py-3 bg-orange-400 rounded max-w-md"
             v-show="close"
