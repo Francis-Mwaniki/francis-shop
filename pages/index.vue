@@ -3,7 +3,15 @@
     <div
       class="absolute top-5 gap-x-2 right-32 md:right-8 md:top-5 flex-row justify-center items-center flex"
     >
-      <Nuxt-Link to="/tasks" class="btn btn-accent">Admin</Nuxt-Link>
+      <Nuxt-Link
+        to="/tasks"
+        class="btn btn-accent flex justify-center items-center mx-auto gap-x-1"
+      >
+        <span class="text-indigo-900 mx-1 cursor-pointer text-lg md:text-black">
+          <Icon name="ic:baseline-admin-panel-settings" class="text-black"
+        /></span>
+        Admin
+      </Nuxt-Link>
       <label for="my-modal-3" class="btn btn-accent btn-outline">
         <span class="text-indigo-900 mx-1 cursor-pointer text-lg md:text-black">
           <Icon name="ic:outline-shopping-cart" class="text-black"
