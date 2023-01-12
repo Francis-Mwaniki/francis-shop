@@ -40,7 +40,7 @@
             <!-- Logo -->
             <Nuxt-Link to="#">
               <span class="sr-only">Franc</span>
-              <img
+              <nuxt-img
                 src="https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/8f4874c6-78f3-4875-995c-a2da575ff4aa"
                 class="h-20 w-20 rounded-full"
                 alt=""
