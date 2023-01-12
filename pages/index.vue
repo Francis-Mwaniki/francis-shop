@@ -85,7 +85,7 @@
                 <p class="text-sm font-medium text-gray-300">Sh.{{ product.price }}</p>
               </div>
               <div
-                class="flex justify-center md:justify-around items-center mx-auto gap-x-2 sm:flex-row flex-col"
+                class="flex justify-center md:justify-around items-center mx-auto gap-x-2 gap-y-2 sm:flex-row flex-col"
               >
                 <label
                   for="my-modal"
