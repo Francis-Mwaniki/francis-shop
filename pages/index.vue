@@ -65,7 +65,7 @@
                     </a>
                   </h3>
                 </div>
-                <p class="text-sm font-medium text-gray-300">{{ product.price }}</p>
+                <p class="text-sm font-medium text-gray-300">Sh.{{ product.price }}</p>
               </div>
               <div
                 class="flex justify-center md:justify-around items-center mx-auto gap-x-2 sm:flex-row flex-col"
