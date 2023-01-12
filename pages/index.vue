@@ -129,10 +129,13 @@
               Your Cart ({{ cart.length }})
             </div>
             <div
-              class="flex justify-center items-center mx-auto text-white"
+              class="flex flex-col justify-center items-center mx-auto text-white max-w-md"
               v-show="cart == 0"
             >
-              Your Cart is empty add something........
+              Your Cart is empty add
+              <span class="flex justify-center items-center mx-auto text-white"
+                >something........</span
+              >
             </div>
             <div
               class="flex justify-center items-center mx-auto text-white flex-row gap-x-2"
@@ -145,7 +148,11 @@
             <div
               class="mt-6 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
             >
-              <div v-for="item in cart" :key="item.id">
+              <div
+                v-for="item in cart"
+                :key="item.id"
+                class="ring-1 p-1 md:p-0 md:gap-y-3 md:py-2 rounded ring-orange-300 flex justify-center items-center flex-col gap-y-2"
+              >
                 <div
                   class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-20"
                 >
@@ -160,11 +167,19 @@
                     <h3 class="text-sm text-gray-200">
                       <a>
                         <span aria-hidden="true" class="" />
-                        {{ item.name }}
+                        {{ item.name.slice(0, 5) }}..
                       </a>
                     </h3>
                   </div>
                   <p class="text-sm font-medium text-gray-200">Sh.{{ item.price }}</p>
+                </div>
+                <div class="flex justify-center items-center mx-auto">
+                  <button
+                    @click="remove(item.id)"
+                    class="px-4 md:px-3 py-1 rounded bg-orange-400 text-black"
+                  >
+                    remove
+                  </button>
                 </div>
               </div>
             </div>
@@ -367,6 +382,10 @@ export default {
       this.close = true;
       console.log(this.selectedProduct);
       console.log(this.selectedPrice);
+    },
+    remove: function (id) {
+      let index = this.cart.findIndex((item) => item.id === id);
+      this.cart.splice(index, 1);
     },
     disable: function () {
       this.close = !this.close;
