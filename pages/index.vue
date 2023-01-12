@@ -1,7 +1,7 @@
 <template>
   <main class="">
     <div
-      class="absolute top-5 gap-x-2 right-32 md:right-8 md:top-5 flex-row justify-center items-center flex"
+      class="absolute top-5 gap-x-2 right-32 md:right-8 md:top-5 flex-row justify-center items-center md:flex hidden"
     >
       <Nuxt-Link
         to="/tasks"
@@ -46,14 +46,18 @@
         <p class="py-4"></p>
       </label>
     </label>
+
     <div
       class="flex justify-start pt-3 items-center mx-auto bg-slate-900 flex-col gap-y-3 text-white min-h-screen"
     >
       <div class="bg-slate-900">
-        <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div class="mx-auto max-w-2xl py-4 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 class="font-bold tracking-tight text-gray-100 text-2xl">
             Buy Nice <span class="text-indigo-300 text-2xl">Products today</span>
           </h2>
+          <div class="">
+            <Slider :getCount="getCount" />
+          </div>
           <h3
             class="flex justify-around flex-row mx-auto items-center text-black py-3 bg-orange-400 rounded max-w-md"
             v-show="close"
@@ -273,8 +277,12 @@
 </template>
 
 <script>
+import Slider from "~/components/slider.vue";
 export default {
   name: "HelloWorld",
+  components: {
+    Slider,
+  },
 
   data: function () {
     return {

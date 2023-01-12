@@ -2,6 +2,7 @@
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     'Foot': typeof import("../components/Foot.vue")['default']
+    'Slider': typeof import("../components/slider.vue")['default']
     'OutlineAcademicCapIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
     'OutlineAdjustmentsIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
     'OutlineAnnotationIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -465,6 +466,7 @@ declare module '@vue/runtime-core' {
     'NuxtImg': typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img")['default']
     'NuxtPicture': typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-picture")['default']
     'LazyFoot': typeof import("../components/Foot.vue")['default']
+    'LazySlider': typeof import("../components/slider.vue")['default']
     'LazyOutlineAcademicCapIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
     'LazyOutlineAdjustmentsIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
     'LazyOutlineAnnotationIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -931,6 +933,7 @@ declare module '@vue/runtime-core' {
 }
 
 export const Foot: typeof import("../components/Foot.vue")['default']
+export const Slider: typeof import("../components/slider.vue")['default']
 export const OutlineAcademicCapIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
 export const OutlineAdjustmentsIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
 export const OutlineAnnotationIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -1394,6 +1397,7 @@ export const Icon: typeof import("../node_modules/nuxt-icon/dist/runtime/Icon.vu
 export const NuxtImg: typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img")['default']
 export const NuxtPicture: typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-picture")['default']
 export const LazyFoot: typeof import("../components/Foot.vue")['default']
+export const LazySlider: typeof import("../components/slider.vue")['default']
 export const LazyOutlineAcademicCapIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
 export const LazyOutlineAdjustmentsIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
 export const LazyOutlineAnnotationIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
