@@ -146,7 +146,7 @@
                       </a>
                     </h3>
                   </div>
-                  <p class="text-sm font-medium text-gray-200">{{ item.price }}</p>
+                  <p class="text-sm font-medium text-gray-200">Sh.{{ item.price }}</p>
                 </div>
               </div>
             </div>
