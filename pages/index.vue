@@ -30,6 +30,17 @@
         </div>
       </div>
     </div>
+
+    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <label for="my-modal-4" class="modal cursor-pointer">
+      <label class="modal-box relative" for="">
+        <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
+        <p class="py-4">
+          You've been selected for a chance to get one year of subscription to use
+          Wikipedia for free!
+        </p>
+      </label>
+    </label>
     <div
       class="flex justify-start pt-3 items-center mx-auto bg-slate-900 flex-col gap-y-3 text-white min-h-screen"
     >
@@ -38,7 +49,13 @@
           <h2 class="font-bold tracking-tight text-gray-100 text-2xl">
             Buy Nice <span class="text-indigo-300 text-2xl">Products today</span>
           </h2>
-
+          <h3
+            class="flex justify-around flex-row mx-auto items-center text-black py-3 bg-orange-400 rounded max-w-md"
+            v-show="close"
+          >
+            <span> {{ success }}</span>
+            <button class="bg-white rounded-full p-2 py-1" @click="disable">✕</button>
+          </h3>
           <div
             class="mt-6 grid grid-cols-2 gap-y-2 gap-x-1 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-2"
           >
@@ -80,13 +97,14 @@
                     >Details</span
                   >
                 </label>
-                <button
+                <a
+                  for="my-modal-4"
+                  class="btn btn-accent btn-outline"
                   @click="addToCart(product.id)"
-                  class="my-1 flex justify-center items-center cursor-pointer btn btn-secondary btn-outline"
                 >
                   <Icon name="ic:outline-add-shopping-cart" class="text-black" />
                   <span class="text-black">Add to cart</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -243,8 +261,10 @@ export default {
       loaded: false,
       paidFor: false,
       selectedProduct: "",
+      success: "Product was added to cart",
       selectedPrice: "",
       selectedImgAlt: "",
+      close: false,
       selectedName: "",
       cart: [],
       orders: [],
@@ -344,8 +364,12 @@ export default {
       this.selectedProduct = this.selectedProduct + newId[0].name;
       this.selectedPrice = this.selectedPrice + newId[0].price;
       this.cart.push(newId[0]);
+      this.close = true;
       console.log(this.selectedProduct);
       console.log(this.selectedPrice);
+    },
+    disable: function () {
+      this.close = !this.close;
     },
     details: function (id) {
       var newId = this.products.filter((i) => {
