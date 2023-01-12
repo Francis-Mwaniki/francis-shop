@@ -58,6 +58,12 @@
       "vue-demi": [
         "node_modules/nuxt/dist/app/compat/vue-demi"
       ],
+      "#image": [
+        "node_modules/@nuxt/image-edge/dist/runtime"
+      ],
+      "#image/*": [
+        "node_modules/@nuxt/image-edge/dist/runtime/*"
+      ],
       "#head": [
         "node_modules/nuxt/dist/head/runtime"
       ],

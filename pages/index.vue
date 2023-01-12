@@ -1,105 +1,165 @@
 <template>
   <main class="">
     <div
-      class="absolute top-5 right-40 md:right-8 md:top-5 flex-row justify-center items-center flex"
+      class="absolute top-5 gap-x-2 right-32 md:right-8 md:top-5 flex-row justify-center items-center flex"
     >
-      <span class="text-indigo-900 mx-1 text-lg md:text-black">Cart</span>
-      <span
-        class="p-3 text-white h-7 w-7 rounded-full bg-teal-800 justify-center items-center mx-auto flex"
-        >{{ getCount }}</span
-      >
+      <Nuxt-Link to="/tasks" class="btn btn-accent">Admin</Nuxt-Link>
+      <label for="my-modal-3" class="btn btn-accent btn-outline">
+        <span class="text-indigo-900 mx-1 cursor-pointer text-lg md:text-black">
+          <Icon name="ic:outline-shopping-cart" class="text-black"
+        /></span>
+        <span
+          class="p-3 text-white h-7 w-7 rounded-full justify-center items-center mx-auto flex"
+          >{{ getCount }}</span
+        >
+      </label>
+    </div>
+    <input type="checkbox" id="my-modal" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">{{ selectedName }}</h3>
+        <p class="py-4">
+          {{ selectedImgAlt }}
+        </p>
+        <div class="modal-action">
+          <label
+            for="my-modal"
+            class="btn btn-sm btn-circle absolute rounded-full right-2 top-2 pb-1"
+            >✕</label
+          >
+        </div>
+      </div>
     </div>
     <div
-      class="flex justify-start pt-3 items-center mx-auto bg-slate-800 flex-col gap-y-3 text-white min-h-screen"
+      class="flex justify-start pt-3 items-center mx-auto bg-slate-900 flex-col gap-y-3 text-white min-h-screen"
     >
-      <div class="bg-slate-100">
+      <div class="bg-slate-900">
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 class="font-bold tracking-tight text-gray-900 text-2xl">
-            Buy Nice <span class="text-indigo-600 text-2xl">Products today</span>
+          <h2 class="font-bold tracking-tight text-gray-100 text-2xl">
+            Buy Nice <span class="text-indigo-300 text-2xl">Products today</span>
           </h2>
 
           <div
-            class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+            class="mt-6 grid grid-cols-2 gap-y-2 gap-x-1 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-2"
           >
-            <div v-for="product in products" :key="product.id">
+            <div
+              v-for="product in products"
+              :key="product.id"
+              class="ring-1 ring-orange-300 p-1 rounded"
+            >
               <div
-                class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80"
+                class="min-h-80 p-1 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-80"
               >
-                <img
+                <nuxt-img
                   :src="product.imageSrc"
                   :alt="product.imageAlt"
-                  class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  class="h-64 w-64 object-cover object-center lg:h-64 lg:w-64"
                 />
               </div>
-              <div class="mt-4 flex justify-between">
+              <div class="mt-1 flex justify-between">
                 <div>
-                  <h3 class="text-sm text-gray-700">
+                  <h3 class="text-sm text-gray-100">
                     <a>
                       <span aria-hidden="true" class="" />
                       {{ product.name }}
                     </a>
                   </h3>
                 </div>
-                <p class="text-sm font-medium text-gray-900">{{ product.price }}</p>
+                <p class="text-sm font-medium text-gray-300">{{ product.price }}</p>
               </div>
-              <button
-                @click="addToCart(product.id)"
-                class="bg-slate-900 rounded my-1 flex justify-center items-center cursor-pointer px-9 py-2 ring-2 ring-indigo-600 text-white"
-              >
-                Add to cart
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        v-if="!paidFor"
-        class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-2"
-      >
-        <div class="flex justify-center items-center mx-auto text-white" v-show="cart">
-          Your Cart ({{ cart.length }})
-        </div>
-        <div
-          class="flex justify-center items-center mx-auto text-white"
-          v-show="cart == 0"
-        >
-          Your Cart is empty add something........
-        </div>
-        <div
-          class="flex justify-center items-center mx-auto text-white flex-row gap-x-2"
-          v-show="cart"
-        >
-          <h3>Total</h3>
-          <span>{{ getTotal }}</span>
-        </div>
+              <div class="flex justify-around items-center mx-auto gap-x-2 flex-row">
+                <button
+                  @click="addToCart(product.id)"
+                  class="my-1 flex justify-center items-center cursor-pointer btn btn-secondary btn-outline"
+                >
+                  <Icon name="ic:outline-add-shopping-cart" class="text-black" />
+                </button>
 
-        <div
-          class="mt-6 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
-        >
-          <div v-for="item in cart" :key="item.id">
-            <div
-              class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80"
-            >
-              <img
-                :src="item.imageSrc"
-                :alt="item.imageAlt"
-                class="h-32 w-32 object-cover object-center lg:h-60 lg:w-60 rounded"
-              />
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-sm text-gray-200">
-                  <a>
-                    <span aria-hidden="true" class="" />
-                    {{ item.name }}
-                  </a>
-                </h3>
+                <label
+                  for="my-modal"
+                  class="btn btn-accent btn-outline"
+                  @click="details(product.id)"
+                >
+                  <Icon name="ic:outline-details" class="text-black" /><span
+                    class="text-black"
+                    >Details</span
+                  >
+                </label>
               </div>
-              <p class="text-sm font-medium text-gray-200">{{ item.price }}</p>
             </div>
           </div>
         </div>
       </div>
+      <!-- Starts here -->
+
+      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box relative">
+          <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2"
+            >✕</label
+          >
+          <div
+            v-if="!paidFor"
+            class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-2"
+          >
+            <div
+              class="flex justify-center items-center mx-auto text-white"
+              v-show="cart"
+            >
+              Your Cart ({{ cart.length }})
+            </div>
+            <div
+              class="flex justify-center items-center mx-auto text-white"
+              v-show="cart == 0"
+            >
+              Your Cart is empty add something........
+            </div>
+            <div
+              class="flex justify-center items-center mx-auto text-white flex-row gap-x-2"
+              v-show="cart"
+            >
+              <h3>Total</h3>
+              <span>{{ getTotal }}</span>
+            </div>
+
+            <div
+              class="mt-6 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+            >
+              <div v-for="item in cart" :key="item.id">
+                <div
+                  class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-20"
+                >
+                  <nuxt-img
+                    :src="item.imageSrc"
+                    :alt="item.imageAlt"
+                    class="h-20 w-20 object-cover object-center rounded"
+                  />
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <h3 class="text-sm text-gray-200">
+                      <a>
+                        <span aria-hidden="true" class="" />
+                        {{ item.name }}
+                      </a>
+                    </h3>
+                  </div>
+                  <p class="text-sm font-medium text-gray-200">{{ item.price }}</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex justify-center items-center mx-auto flex-col gap-y-3 mt-3"
+              v-show="cart.length !== 0"
+            >
+              <button @click="paymentMethod" class="mb-6 btn btn-accent">Pay Here</button>
+
+              <div ref="paypal"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ends Here -->
 
       <div v-if="paidFor">
         <h1 class="flex justify-center items-center mx-auto my-1 text-2xl md:text-3xl">
@@ -118,7 +178,7 @@
             </tr>
           </thead>
           <tbody
-            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+            class="bg-pink-600 divide-y dark:divide-gray-700 dark:bg-gray-800"
             v-for="order in orders"
             :key="order"
           >
@@ -168,15 +228,6 @@
           Clear all
         </button>
       </div>
-
-      <button
-        @click="paymentMethod"
-        class="bg-slate-900 mb-6 rounded px-9 py-2 ring-2 ring-indigo-600 text-white"
-      >
-        Pay Here
-      </button>
-
-      <div ref="paypal"></div>
     </div>
   </main>
 </template>
@@ -191,6 +242,8 @@ export default {
       paidFor: false,
       selectedProduct: "",
       selectedPrice: "",
+      selectedImgAlt: "",
+      selectedName: "",
       cart: [],
       orders: [],
       products: [
@@ -199,7 +252,7 @@ export default {
           name: "Basic hit",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/VPIllyPCWRuW40REg-8NzQTm9cYGhFFKdWfgrYyTgaQ/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/djJjYUc2cFdsMVBi/SGtON25HOGRRSGFI/YSZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/f2fa53f1-6710-4c99-8250-27c2d4046769",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 35,
           color: "Black",
@@ -209,7 +262,7 @@ export default {
           name: "Basic duf",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/PsQOo510tb8rys4xV98xt1jdtIB8VJMoacvvuwocKUs/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5M/Y2JrZ1o3c05DX2VD/MTM5V2FQdkpnSGFI/YSZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/4e3fecf8-e880-46fe-83b8-7c9f5c43e78e",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 35,
           color: "Black",
@@ -219,7 +272,7 @@ export default {
           name: "Basic cut",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/VOip8s7kyzSngGS2uwbvOllydNPWPilQCIMOwMCN4gw/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC56/OGxFQWFKbXpndHp0/MzF4eF93ZUFBSGFI/YSZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/500d08ca-1543-46f6-9b41-a88ecf3ff56a",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 5,
           color: "Black",
@@ -229,7 +282,7 @@ export default {
           name: " Tee",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/hovkMRGGsohAvM4UNiwY_fMhsofz2465kV0fAiYXUZ8/rs:fit:432:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5p/bE5tRGVMUjdLRC1C/aHVwV2h2alNnSGFJ/SCZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/c93dd9a6-30ec-4a1f-a8e4-bea068bd3f4d",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 45,
           color: "Black",
@@ -239,7 +292,7 @@ export default {
           name: "Basic hit",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/VPIllyPCWRuW40REg-8NzQTm9cYGhFFKdWfgrYyTgaQ/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/djJjYUc2cFdsMVBi/SGtON25HOGRRSGFI/YSZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/a05269cb-23d2-4286-aff3-c4583f3ea834",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 35,
           color: "Black",
@@ -249,7 +302,7 @@ export default {
           name: "Basic duf",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/PsQOo510tb8rys4xV98xt1jdtIB8VJMoacvvuwocKUs/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5M/Y2JrZ1o3c05DX2VD/MTM5V2FQdkpnSGFI/YSZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/7a40d598-fb81-40d5-8f03-f98741384219",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 35,
           color: "Black",
@@ -259,7 +312,7 @@ export default {
           name: "Basic cut",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/VOip8s7kyzSngGS2uwbvOllydNPWPilQCIMOwMCN4gw/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC56/OGxFQWFKbXpndHp0/MzF4eF93ZUFBSGFI/YSZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/576d60ad-2465-49ad-b31f-bc00b41a93af",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 5,
           color: "Black",
@@ -269,7 +322,7 @@ export default {
           name: " Tee",
           href: "#",
           imageSrc:
-            "https://imgs.search.brave.com/hovkMRGGsohAvM4UNiwY_fMhsofz2465kV0fAiYXUZ8/rs:fit:432:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5p/bE5tRGVMUjdLRC1C/aHVwV2h2alNnSGFJ/SCZwaWQ9QXBp",
+            "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/4714e409-0647-436b-862e-8e4780ea4772",
           imageAlt: "Front of men's Basic Tee in black.",
           price: 45,
           color: "Black",
@@ -291,6 +344,17 @@ export default {
       this.cart.push(newId[0]);
       console.log(this.selectedProduct);
       console.log(this.selectedPrice);
+    },
+    details: function (id) {
+      var newId = this.products.filter((i) => {
+        /*  this.selectedProduct = this.selectedProduct + newId.name;
+          this.selectedPrice = this.selectedPrice + newId.price;
+          console.log(this.selectedPrice);
+          console.log(this.selectedProduct); */
+        return i.id === id;
+      });
+      this.selectedName = this.selectedName + newId[0].name;
+      this.selectedImgAlt = this.selectedImgAlt + newId[0].imageAlt;
     },
     paymentMethod: function () {
       const script = document.createElement("script");

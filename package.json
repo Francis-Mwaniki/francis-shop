@@ -9,8 +9,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxtjs/tailwindcss": "^5.3.3",
-    "nuxt": "3.0.0-rc.10"
+    "nuxt": "3.0.0-rc.10",
+    "nuxt-icon": "^0.2.0"
   },
   "dependencies": {
     "@nuxt-hero-icons/outline": "^1.0.1",
@@ -18,6 +20,7 @@
     "@pinia/nuxt": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@vee-validate/rules": "^4.6.7",
+    "daisyui": "^2.20.0",
     "pinia": "^2.0.22",
     "vee-validate": "^4.6.7"
   }

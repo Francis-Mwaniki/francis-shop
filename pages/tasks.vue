@@ -17,30 +17,6 @@
         <div
           class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right"
         >
-          <div
-            class="bg-white rounded flex items-center w-full max-w-xl mr-4 p-2 shadow-sm border border-gray-200"
-          >
-            <button class="outline-none focus:outline-none">
-              <svg
-                class="w-5 text-gray-600 h-5 cursor-pointer"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-            </button>
-            <input
-              type="search"
-              name=""
-              id=""
-              placeholder="Search"
-              class="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent"
-            />
-          </div>
           <ul class="flex items-center">
             <li>
               <button
@@ -48,7 +24,7 @@
                 class="group p-2 transition-colors duration-200 rounded-full shadow-md bg-blue-200 hover:bg-blue-200 dark:bg-gray-50 dark:hover:bg-gray-200 text-gray-900 focus:outline-none"
               >
                 <svg
-                  x-show="isDark"
+                  v-show="isDark"
                   width="24"
                   height="24"
                   class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
@@ -65,7 +41,7 @@
                   />
                 </svg>
                 <svg
-                  x-show="!isDark"
+                  v-show="!isDark"
                   width="24"
                   height="24"
                   class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
@@ -152,8 +128,8 @@
               </a>
             </li>
             <li>
-              <a
-                href="#"
+              <Nuxt-Link
+                to="/"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6"
               >
                 <span class="inline-flex justify-center items-center ml-4">
@@ -172,12 +148,12 @@
                     ></path>
                   </svg>
                 </span>
-                <span class="ml-2 text-sm tracking-wide truncate">Home</span>
+                <span to="/" class="ml-2 text-sm tracking-wide truncate">Home</span>
                 <span
                   class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-indigo-50 rounded-full"
                   >New</span
                 >
-              </a>
+              </Nuxt-Link>
             </li>
           </ul>
           <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">
@@ -882,3 +858,12 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      isDark: false,
+    };
+  },
+};
+</script>
