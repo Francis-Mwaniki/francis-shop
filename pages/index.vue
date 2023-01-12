@@ -42,7 +42,7 @@
     <input type="checkbox" id="my-modal-4" class="modal-toggle" />
     <label for="my-modal-4" class="modal cursor-pointer">
       <label class="modal-box relative" for="">
-        <h3 class="text-lg font-bold"></h3>
+        <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
         <p class="py-4"></p>
       </label>
     </label>
