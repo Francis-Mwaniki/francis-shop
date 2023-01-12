@@ -2,7 +2,7 @@
   <div
     class="bg-slate-800 text-white font-mono text-sm flex justify-center items-center mx-auto py-2"
   >
-    Franc.Pro &copy;Copyrights 2022.
+    Francis &copy;Copyrights 2023.
   </div>
 </template>
 

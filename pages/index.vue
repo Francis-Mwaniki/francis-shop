@@ -67,14 +67,9 @@
                 </div>
                 <p class="text-sm font-medium text-gray-300">{{ product.price }}</p>
               </div>
-              <div class="flex justify-around items-center mx-auto gap-x-2 flex-row">
-                <button
-                  @click="addToCart(product.id)"
-                  class="my-1 flex justify-center items-center cursor-pointer btn btn-secondary btn-outline"
-                >
-                  <Icon name="ic:outline-add-shopping-cart" class="text-black" />
-                </button>
-
+              <div
+                class="flex justify-center md:justify-around items-center mx-auto gap-x-2 sm:flex-row flex-col"
+              >
                 <label
                   for="my-modal"
                   class="btn btn-accent btn-outline"
@@ -85,6 +80,13 @@
                     >Details</span
                   >
                 </label>
+                <button
+                  @click="addToCart(product.id)"
+                  class="my-1 flex justify-center items-center cursor-pointer btn btn-secondary btn-outline"
+                >
+                  <Icon name="ic:outline-add-shopping-cart" class="text-black" />
+                  <span class="text-black">Add to cart</span>
+                </button>
               </div>
             </div>
           </div>
