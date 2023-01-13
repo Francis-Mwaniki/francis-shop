@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss",'nuxt-icon','@nuxt/image-edge',],
+  modules: ["@nuxtjs/tailwindcss",'nuxt-icon','@nuxt/image-edge','@nuxtjs/color-mode'],
   buildModules: [
     // ...
     // https://github.com/whardier/nuxt-hero-icons

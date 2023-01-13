@@ -3,6 +3,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     'Foot': typeof import("../components/Foot.vue")['default']
     'Slider': typeof import("../components/slider.vue")['default']
+    'ToggleMode': typeof import("../components/toggleMode.vue")['default']
     'OutlineAcademicCapIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
     'OutlineAdjustmentsIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
     'OutlineAnnotationIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -465,8 +466,10 @@ declare module '@vue/runtime-core' {
     'Icon': typeof import("../node_modules/nuxt-icon/dist/runtime/Icon.vue")['default']
     'NuxtImg': typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img")['default']
     'NuxtPicture': typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-picture")['default']
+    'ColorScheme': typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
     'LazyFoot': typeof import("../components/Foot.vue")['default']
     'LazySlider': typeof import("../components/slider.vue")['default']
+    'LazyToggleMode': typeof import("../components/toggleMode.vue")['default']
     'LazyOutlineAcademicCapIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
     'LazyOutlineAdjustmentsIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
     'LazyOutlineAnnotationIcon': typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -929,11 +932,13 @@ declare module '@vue/runtime-core' {
     'LazyIcon': typeof import("../node_modules/nuxt-icon/dist/runtime/Icon.vue")['default']
     'LazyNuxtImg': typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img")['default']
     'LazyNuxtPicture': typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-picture")['default']
+    'LazyColorScheme': typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
   }
 }
 
 export const Foot: typeof import("../components/Foot.vue")['default']
 export const Slider: typeof import("../components/slider.vue")['default']
+export const ToggleMode: typeof import("../components/toggleMode.vue")['default']
 export const OutlineAcademicCapIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
 export const OutlineAdjustmentsIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
 export const OutlineAnnotationIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -1396,8 +1401,10 @@ export const NuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/app/
 export const Icon: typeof import("../node_modules/nuxt-icon/dist/runtime/Icon.vue")['default']
 export const NuxtImg: typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img")['default']
 export const NuxtPicture: typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-picture")['default']
+export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
 export const LazyFoot: typeof import("../components/Foot.vue")['default']
 export const LazySlider: typeof import("../components/slider.vue")['default']
+export const LazyToggleMode: typeof import("../components/toggleMode.vue")['default']
 export const LazyOutlineAcademicCapIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AcademicCapIcon.vue")['default']
 export const LazyOutlineAdjustmentsIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AdjustmentsIcon.vue")['default']
 export const LazyOutlineAnnotationIcon: typeof import("../node_modules/@nuxt-hero-icons/outline/src/components/AnnotationIcon.vue")['default']
@@ -1860,5 +1867,6 @@ export const LazyNuxtLoadingIndicator: typeof import("../node_modules/nuxt/dist/
 export const LazyIcon: typeof import("../node_modules/nuxt-icon/dist/runtime/Icon.vue")['default']
 export const LazyNuxtImg: typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-img")['default']
 export const LazyNuxtPicture: typeof import("../node_modules/@nuxt/image-edge/dist/runtime/components/nuxt-picture")['default']
+export const LazyColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
 
 export const componentNames: string[]

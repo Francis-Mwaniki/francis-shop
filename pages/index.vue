@@ -1,8 +1,5 @@
 <template>
   <main class="">
-    <div class="">
-      <Slider :getCount="getCount" />
-    </div>
     <div
       class="absolute top-5 gap-x-2 right-3 md:right-8 md:top-5 flex-row justify-center items-center flex"
     >
@@ -84,28 +81,28 @@
                     </a>
                   </h3>
                 </div>
-                <p class="text-sm font-medium text-gray-300">Us.{{ product.price }}</p>
+                <p class="text-sm font-medium text-gray-300">USD{{ product.price }}</p>
               </div>
               <div
-                class="flex justify-center md:justify-around items-center mx-auto gap-x-2 gap-y-2 sm:flex-row flex-col"
+                class="flex justify-center md:justify-around items-center mx-auto gap-x-1 flex-row my-2"
               >
                 <label
                   for="my-modal"
-                  class="btn btn-accent btn-outline"
+                  class="px-4 rounded py-2 bg-orange-400 text-black"
                   @click="details(product.id)"
                 >
                   <Icon name="ic:outline-details" class="text-black" /><span
                     class="text-black"
-                    >Details</span
+                    >info</span
                   >
                 </label>
                 <a
                   for="my-modal-4"
-                  class="btn btn-accent btn-outline"
+                  class="px-4 rounded py-2 bg-orange-400 text-black"
                   @click="addToCart(product.id)"
                 >
                   <Icon name="ic:outline-add-shopping-cart" class="text-black" />
-                  <span class="text-black">Add to cart</span>
+                  <span class="text-black">Add</span>
                 </a>
               </div>
             </div>
@@ -173,7 +170,7 @@
                       </a>
                     </h3>
                   </div>
-                  <p class="text-sm font-medium text-gray-200">Us.{{ item.price }}</p>
+                  <p class="text-sm font-medium text-gray-200">USD{{ item.price }}</p>
                 </div>
                 <div class="flex justify-center items-center mx-auto">
                   <button
@@ -270,12 +267,9 @@
 </template>
 
 <script>
-import Slider from "~/components/slider.vue";
 export default {
   name: "HelloWorld",
-  components: {
-    Slider,
-  },
+  components: {},
 
   data: function () {
     return {

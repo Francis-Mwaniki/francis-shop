@@ -93,6 +93,13 @@
               <Icon name="ic:baseline-admin-panel-settings" class="text-white h-6 w-6" />
               <span>Admin</span>
             </Nuxt-Link>
+            <Nuxt-Link to="/login" class="flex items-center space-x-2">
+              <Icon name="tabler:login" class="text-white h-6 w-6" />
+              <span>Login</span>
+            </Nuxt-Link>
+            <div class="">
+              <ToggleMode />
+            </div>
           </nav>
           <div class="flex-shrink-0 p-4">
             <button class="flex items-center space-x-2">

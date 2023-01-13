@@ -2,7 +2,7 @@
   <!-- component -->
   <div class="py-6">
     <div
-      class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
+      class="flex bg-orange-200 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
     >
       <div
         class="hidden lg:block lg:w-1/2 bg-cover"
