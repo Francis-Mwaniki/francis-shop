@@ -11,6 +11,7 @@
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/supabase": "^0.3.0",
     "@nuxtjs/tailwindcss": "^5.3.3",
     "nuxt": "3.0.0-rc.10",
     "nuxt-icon": "^0.2.0"

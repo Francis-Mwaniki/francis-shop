@@ -45,7 +45,18 @@
                 class="h-20 w-20 rounded-full"
                 alt=""
               />
+              <h1 class="text-sm text-orange-600 p-1" v-if="mainUser">
+                <span class="bg-orange-500 rounded-full p-1 text-black">
+                  {{ mainUser }}
+                </span>
+              </h1>
+              <h1 class="text-sm text-orange-600 p-1" v-else>
+                <span class="bg-orange-500 rounded-full p-1 text-black">
+                  {{ logoutErr }}
+                </span>
+              </h1>
             </Nuxt-Link>
+
             <!-- Close btn -->
             <button
               @click="isSidebarOpen = false"
@@ -100,9 +111,29 @@
             <div class="">
               <ToggleMode />
             </div>
+
+            <h3
+              class="flex justify-around mb-2 flex-row sm:mx-auto mx-2 items-center text-black py-3 bg-orange-400 rounded max-w-md"
+              v-show="close"
+            >
+              <span class="px-2"> {{ success }}</span>
+              <button class="bg-white rounded-full p-2 py-1 m-1" @click="disable">
+                ✕
+              </button>
+            </h3>
+            <h3
+              class="flex justify-around mb-2 flex-row sm:mx-auto mx-2 items-center text-black py-3 bg-red-600 rounded max-w-md"
+              v-show="closeErr"
+            >
+              <span class="px-2 py-1"> {{ err }}</span>
+              <button class="bg-white rounded-full p-2 py-1 m-1" @click="disableErr">
+                ✕
+              </button>
+            </h3>
           </nav>
+
           <div class="flex-shrink-0 p-4">
-            <button class="flex items-center space-x-2">
+            <button class="flex items-center space-x-2" @click="logout">
               <svg
                 aria-hidden="true"
                 class="w-6 h-6"
@@ -157,13 +188,62 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   data() {
     return {
       isSidebarOpen: false,
     };
   },
+
   props: ["getCount"],
+
+  setup() {
+    const success = ref("");
+    let close = ref(false);
+    let mainUser = ref("");
+    let logoutErr = ref("");
+    let closeErr = ref(false);
+    let err = ref("");
+    const client = useSupabaseAuthClient();
+    const user = client.auth
+      .getUser()
+      .then((res) => {
+        mainUser.value = res.data.user.email;
+      })
+      .catch((error) => {
+        logoutErr.value = " Not Logged In";
+      });
+
+    const logout = async () => {
+      const { error } = await client.auth.signOut();
+      if (!error) {
+        close.value = true;
+        success.value = "Logged Out!";
+      } else {
+        closeErr.value = true;
+        err.value = error.message;
+      }
+    };
+    const disable = () => {
+      close.value = !close.value;
+    };
+    const disableErr = () => {
+      closeErr.value = !closeErr.value;
+    };
+
+    return {
+      mainUser,
+      logoutErr,
+      logout,
+      success,
+      err,
+      close,
+      closeErr,
+      disable,
+      disableErr,
+    };
+  },
 };
 </script>
 
