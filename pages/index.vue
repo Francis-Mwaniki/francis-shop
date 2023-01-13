@@ -81,7 +81,7 @@
                     </a>
                   </h3>
                 </div>
-                <p class="text-sm font-medium text-gray-300">USD{{ product.price }}</p>
+                <p class="text-sm font-medium text-gray-300">USD.{{ product.price }}</p>
               </div>
               <div
                 class="flex justify-center md:justify-around items-center mx-auto gap-x-1 flex-row my-2"
@@ -170,7 +170,7 @@
                       </a>
                     </h3>
                   </div>
-                  <p class="text-sm font-medium text-gray-200">USD{{ item.price }}</p>
+                  <p class="text-sm font-medium text-gray-200">USD.{{ item.price }}</p>
                 </div>
                 <div class="flex justify-center items-center mx-auto">
                   <button
@@ -417,7 +417,7 @@ export default {
                 {
                   description: this.selectedProduct,
                   amount: {
-                    currency_code: "USD",
+                    currency_code: "USD.",
                     value: this.getTotal,
                   },
                 },
