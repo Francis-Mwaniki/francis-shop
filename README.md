@@ -26,7 +26,7 @@ A Nuxt 3 app that displays how to use [ Auth Routes & Middleware](https://v3.nux
 1. Build & deploy if you want to `npm run build`
 
 ## USAGE
-
+0. This -[https://francis-shop.vercel.app/] is working in production
 1. Use sandbox to test 
 1. Live might or might not work depending on your credential accuracy in Paypal
 1. replace CLIENT-ID with your client-id
