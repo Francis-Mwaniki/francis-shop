@@ -17,16 +17,6 @@ declare module '@nuxt/schema' {
         cdnURL: string,
     },
 
-    ipx: {
-        dir: string,
-
-        domains: Array<any>,
-
-        sharp: any,
-
-        alias: any,
-    },
-
     supabase: {
         serviceKey: any,
     },
