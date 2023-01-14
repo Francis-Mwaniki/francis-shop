@@ -4,8 +4,9 @@
 
 # Preview shop in small Screen
 
+<p style="display:flex; flex-direction:row;"><img src="./assets/images/mobile.png" />
 <img src="./assets/images/mobile.png" />
-<img src="./assets/images/mobile.png" />
+</p>
 
 # Nuxt 3 CRUD App
 
