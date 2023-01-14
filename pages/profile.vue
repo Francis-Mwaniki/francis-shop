@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="overflow-hidden">
     <!-- component -->
     <section
       v-if="!mainUser"

@@ -183,7 +183,7 @@
         <h1 class="sr-only">Home</h1>
         <img
           src="../assets/images/stunning.jpg"
-          class="object-cover md:h-96 h-80 w-full"
+          class="object-cover md:h-16 h-20 w-full"
           alt=""
         />
       </main>
