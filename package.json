@@ -13,7 +13,6 @@
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/supabase": "^0.3.0",
     "@nuxtjs/tailwindcss": "^5.3.3",
-    "@sidebase/nuxt-session": "^0.2.6",
     "nuxt": "3.0.0-rc.10",
     "nuxt-icon": "^0.2.0"
   },
