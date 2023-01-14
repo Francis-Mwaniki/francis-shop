@@ -1,3 +1,7 @@
+# Preview shop here
+
+<img src="./assets/images/shop.png" />
+
 # Nuxt 3 CRUD App
 
 A Nuxt 3 app that displays how to use [ Auth Routes & Middleware](https://v3.nuxtjs.org/guide/directory-structure/server) to perform CRUD operations.
