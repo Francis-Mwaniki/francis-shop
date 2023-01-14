@@ -4,7 +4,7 @@
 
 # Preview shop in small Screen
 
-<p style="display:flex; flex-direction:row; gap:10rem;"><img src="./assets/images/mobile.png" />
+<p style="display:flex; flex-direction:row; gap:10px;"><img src="./assets/images/mobile.png" />
 <img src="./assets/images/mobile.png" />
 </p>
 
