@@ -5,7 +5,7 @@
 # Preview shop in small Screen
 
 <p style="display:flex; flex-direction:row; gap:10px;"><img src="./assets/images/mobile.png" />
-<img src="./assets/images/mobile(1).png" />
+<img src="./assets/images/tab.png" />
 </p>
 
 # Nuxt 3 CRUD App
