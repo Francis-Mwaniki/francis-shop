@@ -1,6 +1,10 @@
-# Preview shop here
+# Preview shop in Large Screen
 
 <img src="./assets/images/shop.png" />
+
+# Preview shop in small Screen
+
+<img src="./assets/images/mobile.png" />
 
 # Nuxt 3 CRUD App
 
