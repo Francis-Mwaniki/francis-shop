@@ -38,7 +38,7 @@
         <div class="z-10 flex flex-col flex-1">
           <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
             <!-- Logo -->
-            <Nuxt-Link to="#">
+            <Nuxt-Link to="/profile">
               <span class="sr-only">Franc</span>
               <nuxt-img
                 src="https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/8f4874c6-78f3-4875-995c-a2da575ff4aa"
@@ -107,6 +107,10 @@
             <Nuxt-Link to="/login" class="flex items-center space-x-2">
               <Icon name="tabler:login" class="text-white h-6 w-6" />
               <span>Login</span>
+            </Nuxt-Link>
+            <Nuxt-Link to="/profile" class="flex items-center space-x-2">
+              <Icon name="material-symbols:settings" class="text-white h-6 w-6" />
+              <span>Settings</span>
             </Nuxt-Link>
             <div class="">
               <ToggleMode />
