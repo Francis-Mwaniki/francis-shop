@@ -1,6 +1,6 @@
 # Preview shop in Large Screen
 
-<img src="./assets/images/shop.png" />
+<img src="./assets/images/pc.png" />
 
 # Preview shop in small Screen
 
