@@ -228,6 +228,9 @@ export default {
         closeErr.value = true;
         err.value = error.message;
       }
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     };
     const disable = () => {
       close.value = !close.value;
