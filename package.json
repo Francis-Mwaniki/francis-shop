@@ -13,6 +13,7 @@
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/supabase": "^0.3.0",
     "@nuxtjs/tailwindcss": "^5.3.3",
+    "@sidebase/nuxt-session": "^0.2.6",
     "nuxt": "3.0.0-rc.10",
     "nuxt-icon": "^0.2.0"
   },
@@ -23,6 +24,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@vee-validate/rules": "^4.6.7",
     "daisyui": "^2.20.0",
+    "localstorage-memory": "^1.0.3",
     "pinia": "^2.0.22",
     "vee-validate": "^4.6.7"
   }

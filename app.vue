@@ -12,6 +12,7 @@ import Slider from "~/components/slider.vue";
 import Foot from "./components/Foot.vue";
 export default {
   components: { Foot, Slider },
+  props: ["getCount"],
 
   watch: {
     $route() {
