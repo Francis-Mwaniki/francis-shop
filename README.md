@@ -17,6 +17,7 @@ A Nuxt 3 app that displays how to use [ Auth Routes & Middleware](https://v3.nux
 - [Nuxt 3](https://v3.nuxtjs.org)
 - [TailwindCSS](https://tailwindcss.com/)
 - [paypal](https://developer.paypal.com/)
+- [supabase](https://supabase.com/)
 
 ## How to start
 
