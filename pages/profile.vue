@@ -60,7 +60,8 @@
       >
         <section class="w-64 mx-auto bg-[#20354b] rounded-2xl px-8 py-6 shadow-lg">
           <div class="flex items-center justify-between">
-            <span class="text-gray-400 text-sm">Your Profile</span>
+            <span class="text-gray-400 text-xs">Your Profile as @</span>
+            <span class="text-gray-400 text-xs border-b border-pink-600">{{ time }}</span>
             <span class="text-emerald-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,8 +89,8 @@
           </div>
 
           <div class="mt-8">
-            <h2 class="text-white font-bold text-2xl tracking-wide">
-              {{ mainUser.slice(0, 14) }}
+            <h2 class="text-white font-bold text-xs tracking-wide">
+              {{ mainUser }}
             </h2>
           </div>
           <p class="text-emerald-400 font-semibold mt-2.5">Active</p>
@@ -109,24 +110,31 @@
 
 <script>
 import { ref } from "vue";
+import { format } from "date-fns";
 export default {
   setup() {
     let mainUser = ref("");
     let err = ref("");
+    let time = ref("");
     const client = useSupabaseAuthClient();
     let user = client.auth
       .getUser()
       .then((res) => {
         mainUser.value = res.data.user.email;
-        return mainUser;
+        time.value = res.data.user.created_at;
+        let isoTime = time.value;
+        let date = format(new Date(isoTime), "dd/MM/yyyy");
+        time.value = date;
+        console.log(time.value);
+        return { mainUser, time };
       })
       .catch((error) => {
         err.value = "Unauthenticated";
       });
-    console.log(mainUser.value);
 
     return {
       mainUser,
+      time,
       user,
       err,
     };
