@@ -95,11 +95,11 @@
           <p class="text-emerald-400 font-semibold mt-2.5">Active</p>
 
           <div class="h-1 w-full bg-black mt-8 rounded-full">
-            <div class="h-1 rounded-full w-2/5 bg-yellow-500"></div>
+            <div class="h-1 rounded-full w-4/5 bg-yellow-500"></div>
           </div>
           <div class="mt-3 text-white text-sm">
             <span class="text-gray-400 font-semibold">status:</span>
-            <span>40%</span>
+            <span>80%</span>
           </div>
         </section>
       </section>
