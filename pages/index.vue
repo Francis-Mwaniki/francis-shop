@@ -23,7 +23,7 @@
         <div class="modal-action">
           <label
             for="my-modal"
-            class="btn btn-sm btn-circle absolute rounded-full right-2 top-2 pb-1"
+            class="btn btn-sm btn-circle absolute rounded right-2 top-2 pb-1"
             >✕</label
           >
         </div>
@@ -53,7 +53,7 @@
             v-show="close"
           >
             <span> {{ success }}</span>
-            <button class="bg-white rounded-full p-2 py-1" @click="disable">✕</button>
+            <button class="bg-white rounded p-2 py-1" @click="disable">✕</button>
           </h3>
           <div
             class="mt-6 grid grid-cols-2 gap-y-2 gap-x-1 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-2"
@@ -131,7 +131,7 @@
               class="flex justify-center items-center flex-row mx-auto text-white gap-x-2"
               v-show="cart"
             >
-              <span class="text-sm md:text-lg">
+              <span class="text-sm md:text-lg" v-show="cart !== 0">
                 Your Cart has ({{ cart.length }})
                 <span class="pr-7 pl-1"> item/s</span></span
               >
