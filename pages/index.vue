@@ -131,9 +131,9 @@
               class="flex justify-center items-center flex-row mx-auto text-white gap-x-2"
               v-show="cart"
             >
-              <span class="text-sm md:text-lg" v-show="cart !== 0">
-                Your Cart has ({{ cart.length }})
-                <span class="pr-7 pl-1"> item/s</span></span
+              <span class="text-sm md:text-lg">
+                <span v-show="cart.length !== 0"> Your Cart has ({{ cart.length }})</span>
+                <span class="pr-7 pl-1" v-show="cart.length !== 0"> item/s</span></span
               >
               <Icon
                 name="material-symbols:shopping-cart-sharp"
