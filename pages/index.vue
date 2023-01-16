@@ -137,7 +137,7 @@
               >
               <Icon
                 name="material-symbols:shopping-cart-sharp"
-                class="h-14 w-14 text-orange-600 p-1 bg-orange-200"
+                class="h-14 w-14 text-orange-600 p-1"
               />
             </div>
             <div
