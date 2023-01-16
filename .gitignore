@@ -1,4 +1,5 @@
-env
+.env
 .nuxt
-nuxt
+.output
 node_modules
+yarn.lock
