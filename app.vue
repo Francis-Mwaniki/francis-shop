@@ -19,5 +19,13 @@ export default {
       location.reload();
     },
   },
+  setup() {
+    const {
+      isModalVisible,
+      toggle,
+      toggleBubbleVisibility,
+      popoutChatWindow,
+    } = useChatWoot();
+  },
 };
 </script>

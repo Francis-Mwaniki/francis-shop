@@ -402,6 +402,22 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.13.tgz#64e8825bf0ce769dac94ee39d92ebe6272020dfc"
   integrity sha512-+BoyIm4I8uJmH/QDIH0fu7MG0AEx9OXEDXnqptXCwKOlOqZiS4iraH1Nr7/ObLMokW3sOCeBNyD68ATcV9b9Ag==
 
+"@huntersofbook/chatwoot-nuxt@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@huntersofbook/chatwoot-nuxt/-/chatwoot-nuxt-0.5.2.tgz#ef6d1880a2d0b67be264bb0cffd41c25f994ebdd"
+  integrity sha512-r64/8V6liRg8gkjQgzeQDVn/t9YHhjjWI54rkzHyu8Dvnxthnis27jYrkv0h+p8IBKRvtYOu6sUfCjVo1O3Acw==
+  dependencies:
+    "@huntersofbook/chatwoot-vue" "^0.4.3"
+    "@nuxt/kit" "^3.0.0"
+    defu "^6.1.1"
+
+"@huntersofbook/chatwoot-vue@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@huntersofbook/chatwoot-vue/-/chatwoot-vue-0.4.3.tgz#6c84041003d0ed5cb8bc30d70d6a07259afe59e6"
+  integrity sha512-++WqE6tMsYY0wyaKs3ELQVdjCFOJ1mpGtHnPLLhDj7P+Kf+75naB7fi6R35QsPtieVdya04jCUxWNrU2KjOvLQ==
+  dependencies:
+    defu "^6.1.1"
+
 "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"

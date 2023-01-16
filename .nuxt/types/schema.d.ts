@@ -5,6 +5,7 @@ declare module '@nuxt/schema' {
     ["icon"]?: typeof import("nuxt-icon").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["image"]?: typeof import("@nuxt/image-edge").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["colorMode"]?: typeof import("@nuxtjs/color-mode").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
+    ["chatwoot"]?: typeof import("@huntersofbook/chatwoot-nuxt").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["supabase"]?: typeof import("@nuxtjs/supabase").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
     ["telemetry"]?: typeof import("@nuxt/telemetry").default extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
   }
@@ -15,6 +16,16 @@ declare module '@nuxt/schema' {
         buildAssetsDir: string,
 
         cdnURL: string,
+    },
+
+    ipx: {
+        dir: string,
+
+        domains: Array<any>,
+
+        sharp: any,
+
+        alias: any,
     },
 
     supabase: {

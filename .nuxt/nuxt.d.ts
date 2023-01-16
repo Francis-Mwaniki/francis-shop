@@ -5,6 +5,7 @@
 /// <reference types="nuxt-icon" />
 /// <reference types="@nuxt/image-edge" />
 /// <reference types="@nuxtjs/color-mode" />
+/// <reference types="@huntersofbook/chatwoot-nuxt" />
 /// <reference types="@nuxtjs/supabase" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference types="nuxt" />
