@@ -1,16 +1,11 @@
 <template>
   <main class="">
-    <div
-      class="absolute top-5 gap-x-2 right-3 md:right-8 md:top-5 flex-row justify-center items-center flex"
-    >
+    <div class="absolute top-5 gap-x-2 right-3 md:right-8 md:top-5 flex-row justify-center items-center flex">
       <label for="my-modal-3" class="btn btn-accent btn-outline">
         <span class="text-indigo-900 mx-1 cursor-pointer text-lg md:text-black">
-          <Icon name="ic:outline-shopping-cart" class="text-black"
-        /></span>
-        <span
-          class="p-3 text-white h-7 w-7 rounded-full justify-center items-center mx-auto flex"
-          >{{ getCount }}</span
-        >
+          <Icon name="ic:outline-shopping-cart" class="text-black" />
+        </span>
+        <span class="p-3 text-white h-7 w-7 rounded-full justify-center items-center mx-auto flex">{{ getCount }}</span>
       </label>
     </div>
     <input type="checkbox" id="my-modal" class="modal-toggle" />
@@ -21,11 +16,7 @@
           {{ selectedImgAlt }}
         </p>
         <div class="modal-action">
-          <label
-            for="my-modal"
-            class="btn btn-sm btn-circle absolute rounded-full right-2 top-2 pb-1"
-            >✕</label
-          >
+          <label for="my-modal" class="btn btn-sm btn-circle absolute rounded-full right-2 top-2 pb-1">✕</label>
         </div>
       </div>
     </div>
@@ -38,9 +29,7 @@
       </label>
     </label>
 
-    <div
-      class="flex justify-start sm:pb-3 items-center mx-auto bg-slate-900 flex-col gap-y-2 text-white"
-    >
+    <div class="flex justify-start sm:pb-3 items-center mx-auto bg-slate-900 flex-col gap-y-2 text-white">
       <div class="bg-slate-900">
         <div class="mx-auto max-w-2xl pt-7 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 class="font-bold tracking-tight text-gray-100 text-2xl md:text-4xl py-2">
@@ -48,29 +37,16 @@
             <span class="text-indigo-300 text-2xl md:text-4xl">Products today</span>
           </h2>
 
-          <h3
-            class="flex justify-around flex-row mx-auto items-center text-black py-3 bg-orange-400 rounded max-w-md"
-            v-show="close"
-          >
+          <h3 class="flex justify-around flex-row mx-auto items-center text-black py-3 bg-orange-400 rounded max-w-md"
+            v-show="close">
             <span> {{ success }}</span>
             <button class="bg-white rounded-full p-2 py-1" @click="disable">✕</button>
           </h3>
-          <div
-            class="mt-6 grid grid-cols-2 gap-y-2 gap-x-1 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-2"
-          >
-            <div
-              v-for="product in products"
-              :key="product.id"
-              class="ring-1 ring-orange-300 p-1 rounded"
-            >
-              <div
-                class="min-h-80 p-1 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-80"
-              >
-                <nuxt-img
-                  :src="product.imageSrc"
-                  :alt="product.imageAlt"
-                  class="h-64 w-64 object-cover object-center lg:h-64 lg:w-64"
-                />
+          <div class="mt-6 grid grid-cols-2 gap-y-2 gap-x-1 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-2">
+            <div v-for="product in products" :key="product.id" class="ring-1 ring-orange-300 p-1 rounded">
+              <div class="min-h-80 p-1 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-80">
+                <nuxt-img :src="product.imageSrc" :alt="product.imageAlt"
+                  class="h-64 w-64 object-cover object-center lg:h-64 lg:w-64" />
               </div>
               <div class="mt-1 flex justify-between">
                 <div>
@@ -83,25 +59,14 @@
                 </div>
                 <p class="text-sm font-medium text-gray-300">USD.{{ product.price }}</p>
               </div>
-              <div
-                class="flex justify-center md:justify-around items-center mx-auto gap-x-1 flex-row my-2"
-              >
-                <label
-                  for="my-modal"
-                  class="px-4 rounded py-2 bg-orange-400 text-black cursor-pointer"
-                  @click="details(product.id)"
-                >
-                  <Icon name="ic:outline-details" class="text-black" /><span
-                    class="text-black"
-                    >info</span
-                  >
+              <div class="flex justify-center md:justify-around items-center mx-auto gap-x-1 flex-row my-2">
+                <label for="my-modal" class="px-5 py-2.5 rounded text-center inline-flex items-center bg-orange-400 text-black cursor-pointer"
+                  @click="details(product.id)">
+                  <Icon name="ic:outline-details" class="mr-1 text-black" /><span class="text-black">Info</span>
                 </label>
-                <a
-                  for="my-modal-4"
-                  class="px-4 rounded py-2 bg-orange-400 text-black cursor-pointer"
-                  @click="addToCart(product.id)"
-                >
-                  <Icon name="ic:outline-add-shopping-cart" class="text-black" />
+                <a for="my-modal-4" class="px-5 py-2.5 rounded text-center inline-flex items-center bg-orange-400 text-black cursor-pointer"
+                  @click="addToCart(product.id)">
+                  <Icon name="ic:outline-add-shopping-cart" class="text-black mr-1" />
                   <span class="text-black">Add</span>
                 </a>
               </div>
@@ -114,65 +79,35 @@
       <input type="checkbox" id="my-modal-3" class="modal-toggle" />
       <div class="modal">
         <div class="modal-box relative">
-          <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2"
-            >✕</label
-          >
-          <div
-            v-if="!paidFor"
-            class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-2"
-          >
+          <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2 content-center">✕</label>
+          <div v-if="!paidFor" class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-2">
             <h3
               class="flex justify-around m-1 flex-row sm:mx-auto mx-2 items-center text-white py-1 bg-red-600 rounded max-w-md"
-              v-show="err"
-            >
+              v-show="err">
               <span class="px-2 py-1"> {{ err }}</span>
             </h3>
-            <div
-              class="flex justify-center items-center flex-row mx-auto text-white gap-x-2"
-              v-show="cart"
-            >
+            <div class="flex justify-center items-center flex-row mx-auto text-white gap-x-2" v-show="cart">
               <span class="text-sm md:text-lg">
-                Your Cart has ({{ cart.length }})
-                <span class="pr-7 pl-1"> item/s</span></span
-              >
-              <Icon
-                name="material-symbols:shopping-cart-sharp"
-                class="h-14 w-14 text-orange-600 rounded-full p-1 bg-orange-200"
-              />
+                Your Cart has {{ cart.length }}
+                <span class="pr-7 pl-1"> {{ cart.length >1 ? 'Items' : 'Item'}}</span></span>
+              <Icon name="material-symbols:shopping-cart-sharp"
+                class="h-14 w-14 text-orange-600 rounded-full p-1 bg-orange-200" />
             </div>
-            <div
-              class="flex flex-col justify-center items-center mx-auto text-white max-w-md"
-              v-show="cart == 0"
-            >
+            <div class="flex flex-col justify-center items-center mx-auto text-white max-w-md" v-show="cart == 0">
               Your Cart is empty add
-              <span class="flex justify-center items-center mx-auto text-white"
-                >something........</span
-              >
+              <span class="flex justify-center items-center mx-auto text-white">something........</span>
             </div>
-            <div
-              class="flex justify-center items-center mx-auto text-white flex-row gap-x-2"
-              v-show="cart"
-            >
+            <div class="flex justify-center items-center mx-auto text-white flex-row gap-x-2" v-show="cart">
               <h3>Total</h3>
               <span>{{ getTotal }}</span>
             </div>
 
-            <div
-              class="mt-6 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
-            >
-              <div
-                v-for="item in cart"
-                :key="item.id"
-                class="ring-1 p-1 md:p-0 md:gap-y-3 md:py-2 rounded ring-orange-300 flex justify-center items-center flex-col gap-y-2"
-              >
-                <div
-                  class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-20"
-                >
-                  <nuxt-img
-                    :src="item.imageSrc"
-                    :alt="item.imageAlt"
-                    class="h-20 w-20 object-cover object-center rounded"
-                  />
+            <div class="mt-6 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              <div v-for="item in cart" :key="item.id"
+                class="ring-1 p-1 md:p-0 md:gap-y-3 md:py-2 rounded ring-orange-300 flex justify-center items-center flex-col gap-y-2">
+                <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md lg:aspect-none lg:h-20">
+                  <nuxt-img :src="item.imageSrc" :alt="item.imageAlt"
+                    class="h-20 w-20 object-cover object-center rounded" />
                 </div>
                 <div class="flex justify-between">
                   <div>
@@ -186,37 +121,23 @@
                   <p class="text-sm font-medium text-gray-200">USD.{{ item.price }}</p>
                 </div>
                 <div class="flex justify-center items-center mx-auto">
-                  <button
-                    @click="remove(item.id)"
-                    class="px-4 md:px-3 py-1 rounded bg-orange-400 text-black"
-                  >
-                    remove
+                  <button @click="remove(item.id)" class="px-4 md:px-3 py-1 rounded bg-orange-400 text-black">
+                    Remove
                   </button>
                 </div>
               </div>
             </div>
 
             <div class="">
-              <div
-                class="flex justify-center items-center mx-auto flex-col gap-y-3 mt-3"
-                v-if="mainUser"
-              >
-                <button
-                  @click="paymentMethod"
-                  class="mb-6 btn btn-accent"
-                  v-show="cart.length !== 0"
-                >
+              <div class="flex justify-center items-center mx-auto flex-col gap-y-3 mt-3" v-if="mainUser">
+                <button @click="paymentMethod" class="mb-6 btn btn-accent" v-show="cart.length !== 0">
                   Pay Here
                 </button>
 
                 <div ref="paypal"></div>
               </div>
-              <Nuxt-Link
-                v-show="!mainUser"
-                to="/login"
-                class="flex justify-center items-center mx-auto gap-y-3 mt-3"
-                v-else
-              >
+              <Nuxt-Link v-show="!mainUser" to="/login" class="flex justify-center items-center mx-auto gap-y-3 mt-3"
+                v-else>
                 <button class="mb-6 btn btn-accent">Login to proceed</button>
               </Nuxt-Link>
             </div>
@@ -233,35 +154,24 @@
         <table class="w-full">
           <thead>
             <tr
-              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
-            >
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Client</th>
               <th class="px-4 py-3">Amount</th>
               <th class="px-4 py-3">Status</th>
               <th class="px-4 py-3">Date</th>
             </tr>
           </thead>
-          <tbody
-            class="bg-pink-600 divide-y dark:divide-gray-700 dark:bg-gray-800"
-            v-for="order in orders"
-            :key="order"
-          >
+          <tbody class="bg-pink-600 divide-y dark:divide-gray-700 dark:bg-gray-800" v-for="order in orders"
+            :key="order">
             <tr
-              class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400"
-            >
+              class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
               <td class="px-4 py-3">
                 <div class="flex items-center text-sm">
                   <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                    <img
-                      class="object-cover w-full h-full rounded-full"
+                    <img class="object-cover w-full h-full rounded-full"
                       src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                      alt=""
-                      loading="lazy"
-                    />
-                    <div
-                      class="absolute inset-0 rounded-full shadow-inner"
-                      aria-hidden="true"
-                    ></div>
+                      alt="" loading="lazy" />
+                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                   </div>
                   <div>
                     <p class="font-semibold">
@@ -276,8 +186,7 @@
               </td>
               <td class="px-4 py-3 text-xs">
                 <span
-                  class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
-                >
+                  class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                   {{ order.status }}
                 </span>
               </td>
@@ -285,10 +194,8 @@
             </tr>
           </tbody>
         </table>
-        <button
-          @click="clear"
-          class="bg-slate-900 flex justify-center items-center my-1 rounded px-9 py-2 ring-2 ring-indigo-600 text-white"
-        >
+        <button @click="clear"
+          class="bg-slate-900 flex justify-center items-center my-1 rounded px-9 py-2 ring-2 ring-indigo-600 text-white">
           Clear all
         </button>
       </div>

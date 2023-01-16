@@ -61,6 +61,6 @@ body {
 }
 .sepia-mode body {
   background-color: #f1e7d0;
-  color: #433422;
+  color: #fff;
 }
 </style>
