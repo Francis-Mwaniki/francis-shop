@@ -8,7 +8,7 @@
           <Icon name="ic:outline-shopping-cart" class="text-black"
         /></span>
         <span
-          class="p-3 text-white h-7 w-7 rounded-full justify-center items-center mx-auto flex"
+          class="p-3 text-white h-7 w-7 rounded justify-center items-center mx-auto flex"
           >{{ getCount }}</span
         >
       </label>
@@ -137,7 +137,7 @@
               >
               <Icon
                 name="material-symbols:shopping-cart-sharp"
-                class="h-14 w-14 text-orange-600 rounded-full p-1 bg-orange-200"
+                class="h-14 w-14 text-orange-600 p-1 bg-orange-200"
               />
             </div>
             <div
@@ -276,7 +276,7 @@
               </td>
               <td class="px-4 py-3 text-xs">
                 <span
-                  class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                  class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded dark:bg-green-700 dark:text-green-100"
                 >
                   {{ order.status }}
                 </span>

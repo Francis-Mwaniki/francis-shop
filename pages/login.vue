@@ -6,14 +6,14 @@
       v-show="close"
     >
       <span class="px-2 py-1"> {{ success }}</span>
-      <button class="bg-white rounded-full p-2 py-1" @click="disable">✕</button>
+      <button class="bg-white rounded p-2 py-1" @click="disable">✕</button>
     </h3>
     <h3
       class="flex justify-around mb-2 flex-row sm:mx-auto mx-2 items-center text-black py-3 bg-red-600 rounded max-w-md"
       v-show="closeErr"
     >
       <span class="px-2 py-1"> {{ err }}</span>
-      <button class="bg-white rounded-full p-2 py-1 m-1" @click="disableErr">✕</button>
+      <button class="bg-white rounded p-2 py-1 m-1" @click="disableErr">✕</button>
     </h3>
     <div
       class="flex bg-orange-200 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
