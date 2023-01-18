@@ -52,7 +52,7 @@
             class="flex justify-around flex-row mx-auto items-center text-black py-3 bg-orange-400 rounded max-w-md"
             v-show="close"
           >
-            <span> {{ success }}</span>
+            <span> {{ cart.length }} {{ success }}</span>
             <button class="bg-white rounded p-2 py-1" @click="disable">✕</button>
           </h3>
           <div
